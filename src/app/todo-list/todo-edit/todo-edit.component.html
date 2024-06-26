@@ -1,0 +1,19 @@
+<h1>Edit Form with id</h1>
+<form [formGroup]="editTodoForm" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label>Title:</label>
+    <input type="text" formControlName="title" />
+  </div>
+
+  <div class="form-control">
+    <label for="is-complete-check">Is Completed:</label>
+    <input
+      id="is-complete-check"
+      type="checkbox"
+      name="is-completed"
+      formControlName="isCompleted"
+    />
+  </div>
+
+  <button type="submit" [disabled]="!editTodoForm.valid">Create Todo</button>
+</form>

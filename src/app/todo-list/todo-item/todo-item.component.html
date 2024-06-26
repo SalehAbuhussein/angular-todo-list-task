@@ -1,0 +1,7 @@
+<div (click)="toggleCompleteStatus(item.id)" class="todo-item-wrapper" [ngClass]="{ completed: item.isCompleted }">
+  <p class="todo-item-title">{{ item.title }}</p>
+  <button class="todo-close-icon" (click)="itemDeleted.emit(item.id)">X</button>
+</div>
+<br>
+
+<a [routerLink]="['/todo-list', 'edit', item.id]">Edit The Item</a>

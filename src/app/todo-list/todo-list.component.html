@@ -1,0 +1,9 @@
+@if (!!todoListDataService.todoListItems.length) { 
+  @for (item of todoListDataService.todoListItems; track item.id) {
+    <app-todo-item [item]="item" (itemDeleted)="onItemDelete($event)" />
+  }
+} @else {
+    <p>No Items Are Added Yet!</p>
+}
+
+<a class="create-todo-link" [routerLink]="['/todo-list', 'create']">Create Todo!</a>
